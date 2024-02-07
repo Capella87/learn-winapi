@@ -1,0 +1,22 @@
+root = true
+
+[*]
+charset = utf-8
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+
+[*.sln]
+charset = utf-8-bom
+indent_size = 4
+indent_style = tab
+
+[*.{vcxproj,vcxproj.filters,vcxproj.user}]
+charset = utf-8-bom
+indent_size = 2
+indent_style = space
+
+[*.{json,xml,yml,manifest}]
+indent_size = 2
+indent_style = space
+insert_final_newline = false
