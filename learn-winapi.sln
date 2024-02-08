@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A02D587-9F76-40BD-A9FE-F53B75693331}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		common.manifest = common.manifest
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "networks", "networks", "{A14E79AE-1BFB-4F9C-9E8D-DA44417AE0A9}"
