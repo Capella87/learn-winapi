@@ -8,21 +8,27 @@
 // disable warning
 #pragma warning(disable:4996)
 
-typedef enum BASEENUM
+enum BASEENUM
 {
     HEX,
     BIN,
     DEC,
     OCTAL
-} baseenum;
+};
 
-const char* get_binary(unsigned char* ch)
+char* get_binary(unsigned char* ch)
 {
-    char rt[9] = "00000000";
-    char num = ch[0];
+    char* rt = (char*)malloc(sizeof(char) * 9);
+    for (int i = 0; i < 8; i++)
+    {
+        rt[i] = '0';
+    }
+    rt[8] = '\0';
+
+    unsigned char num = *ch;
     char* cursor = &rt[7];
 
-    while (num && cursor > rt)
+    while (num && cursor >= rt)
     {
         *cursor = (num % 2) + '0';
         cursor--;
@@ -32,19 +38,39 @@ const char* get_binary(unsigned char* ch)
     return rt;
 }
 
-unsigned char get_utf8_code(const char* ch, size_t len, baseenum mode)
+int show_utf8_code(const char* ch, size_t len, BASEENUM MODE)
 {
     unsigned char chr = 0;
-    // Disassemble
-    printf("0x");
+    char* pt = NULL;
+ 
+    switch (MODE)
+    {
+    case HEX:
+        printf("Hex: 0x");
     for (size_t i = 0; i < len; i++)
     {
         chr = (unsigned char)ch[i];
-        printf("%x ", chr);
+            printf("%X ", chr);
+        }
+        break;
+
+    case BIN:
+        printf("Binary: 0b");
+        for (size_t i = 0; i < len; i++)
+        {
+            chr = (unsigned char)ch[i];
+            pt = get_binary(&chr);
+            printf("%s ", pt);
+            free(pt);
+        }
+        break;
+
+    default:
+        return -1;
     }
     putchar('\n');
 
-    return (unsigned char)0;
+    return 0;
 }
 
 int main(int argc, char** argv)
