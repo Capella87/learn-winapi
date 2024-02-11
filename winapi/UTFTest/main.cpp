@@ -47,9 +47,9 @@ int show_utf8_code(const char* ch, size_t len, BASEENUM MODE)
     {
     case HEX:
         printf("Hex: 0x");
-    for (size_t i = 0; i < len; i++)
-    {
-        chr = (unsigned char)ch[i];
+        for (size_t i = 0; i < len; i++)
+        {
+            chr = (unsigned char)ch[i];
             printf("%X ", chr);
         }
         break;
@@ -73,12 +73,19 @@ int show_utf8_code(const char* ch, size_t len, BASEENUM MODE)
     return 0;
 }
 
+void show_unicode_information(const char* target, size_t len)
+{
+    printf("UTF-8 Information\n");
+    show_utf8_code(target, len, BIN);
+    show_utf8_code(target, len, HEX);
+}
+
 int main(int argc, char** argv)
 {
-    const char* latest_emoji = "🪫";
-    printf("%s\n", latest_emoji);
-    printf("Length: %llu\n", strlen(latest_emoji));
-    get_utf8_code(latest_emoji, strlen(latest_emoji), HEX);
+    const char* unicode_char = "😶‍🌫️";
+    printf("%s\n", unicode_char);
+    printf("Length: %llu\n", strlen(unicode_char));
+    show_unicode_information(unicode_char, strlen(unicode_char));
 
     DWORD dwVersion = 0;
     DWORD dwMajorVersion = 0;
