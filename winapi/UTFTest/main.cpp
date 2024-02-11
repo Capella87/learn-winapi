@@ -16,9 +16,13 @@ enum BASEENUM
     OCTAL
 };
 
-char* get_binary(unsigned char* ch)
+char* get_binary(unsigned char* ch, char* result)
 {
-    char* rt = (char*)malloc(sizeof(char) * 9);
+    char* rt = result;
+    
+    if (result == NULL)
+        rt = (char*)malloc(sizeof(char) * 9);
+
     for (int i = 0; i < 8; i++)
     {
         rt[i] = '0';
@@ -41,6 +45,7 @@ char* get_binary(unsigned char* ch)
 int show_utf8_code(const char* ch, size_t len, BASEENUM MODE)
 {
     unsigned char chr = 0;
+    char* code = NULL;
     char* pt = NULL;
  
     switch (MODE)
@@ -55,14 +60,16 @@ int show_utf8_code(const char* ch, size_t len, BASEENUM MODE)
         break;
 
     case BIN:
+        code = (char*)malloc(sizeof(char) * 9);
         printf("Binary: 0b");
         for (size_t i = 0; i < len; i++)
         {
             chr = (unsigned char)ch[i];
-            pt = get_binary(&chr);
-            printf("%s ", pt);
-            free(pt);
+            get_binary(&chr, code);
+            printf("%s ", code);
         }
+
+        free(code);
         break;
 
     default:
@@ -83,6 +90,7 @@ void show_unicode_information(const char* target, size_t len)
 int main(int argc, char** argv)
 {
     const char* unicode_char = "😶‍🌫️";
+    char input[101] = "";
     printf("%s\n", unicode_char);
     printf("Length: %llu\n", strlen(unicode_char));
     show_unicode_information(unicode_char, strlen(unicode_char));
