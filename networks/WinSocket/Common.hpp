@@ -13,5 +13,10 @@
 #pragma comment(lib, "Ws2_32")
 
 void err_quitW(LPCWSTR msg);
+void err_quit(const char* msg);
+
 void err_displayW(LPCWSTR msg);
+void err_display(const char* msg);
+
 void err_displayW(int errcode);
+void err_display(int errcode);
