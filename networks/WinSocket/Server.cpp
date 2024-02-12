@@ -33,7 +33,7 @@ DWORD WINAPI TCPServerIPv4(LPVOID arg)
     if (retval == SOCKET_ERROR)
         err_quitW(L"listen()");
 
-    // Variables to use on data communication
+    // Variables for data communication
     SOCKET client_sock;
     struct sockaddr_in clientaddr;
     int addrlen;
@@ -54,7 +54,7 @@ DWORD WINAPI TCPServerIPv4(LPVOID arg)
         }
         // Show connected client's information
         WSAAddressToStringW((struct sockaddr*)&clientaddr, sizeof(clientaddr), NULL, wipv4addr, &ipv4addr_len);
-        wprintf(L"\n[TCP 서버] 클라이언트 접속⚡: IP Address: %ls, Port: %d\n",
+        wprintf(L"\n[TCP 서버] 클라이언트 접속✅: IP Address: %ls, Port: %d\n",
             wipv4addr, ntohs(clientaddr.sin_port));
 
         // Data communication with client
@@ -140,7 +140,7 @@ DWORD WINAPI TCPServerIPv6(LPVOID arg)
 
         // Show connected client's information
         WSAAddressToStringW((struct sockaddr*)&clientaddr, sizeof(clientaddr), NULL, wipv6addr, &ipv6addr_len);
-        wprintf(L"\n[TCP 서버] 클라이언트 접속: IP Address: %ls, Port: %d\n",
+        wprintf(L"\n[TCP 서버] 클라이언트 접속✅: IP Address: %ls, Port: %d\n",
             wipv6addr, ntohs(clientaddr.sin6_port));
 
         // Data communication with client
@@ -163,7 +163,7 @@ DWORD WINAPI TCPServerIPv6(LPVOID arg)
 
         // Close socket
         closesocket(client_sock);
-        wprintf(L"\n[TCP 서버] 클라이언트 종료: IP Address: %ls, Port: %d\n",
+        wprintf(L"\n[TCP 서버] 클라이언트 종료🚧: IP Address: %ls, Port: %d\n",
             wipv6addr, ntohs(clientaddr.sin6_port));
     }
 
@@ -175,7 +175,7 @@ DWORD WINAPI TCPServerIPv6(LPVOID arg)
 int wmain(int argc, wchar_t* argv[])
 {
     setlocale(LC_ALL, "");
-    _setmode(_fileno(stdout), _O_U8TEXT);
+    _setmode(_fileno(stdout), _O_U16TEXT);
 
 
     // Initialize WinSock
