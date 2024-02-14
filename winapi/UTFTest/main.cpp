@@ -87,14 +87,8 @@ void show_unicode_information(const char* target, size_t len)
     show_utf8_code(target, len, HEX);
 }
 
-int main(int argc, char** argv)
+void check_windows_version()
 {
-    const char* unicode_char = "😶‍🌫️";
-    char input[101] = "";
-    printf("%s\n", unicode_char);
-    printf("Length: %llu\n", strlen(unicode_char));
-    show_unicode_information(unicode_char, strlen(unicode_char));
-
     DWORD dwVersion = 0;
     DWORD dwMajorVersion = 0;
     DWORD dwMinorVersion = 0;
@@ -123,6 +117,17 @@ int main(int argc, char** argv)
     {
         printf("Yes! you're using Windows 10 or later\n");
     }
+}
+
+int main(int argc, char** argv)
+{
+    const char* unicode_char = "😶‍🌫️";
+    char input[101] = "";
+    printf("%s\n", unicode_char);
+    printf("Length: %llu\n", strlen(unicode_char));
+    show_unicode_information(unicode_char, strlen(unicode_char));
+
+    check_windows_version();
 
     return 0;
 }
