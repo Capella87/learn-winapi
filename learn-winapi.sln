@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinSocket", "networks\WinSo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTFTest", "winapi\UTFTest\UTFTest.vcxproj", "{A5DEBD51-957B-4D4E-B059-E2C3EC3A8A60}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTFIoTest", "UTFIoTest\UTFIoTest.vcxproj", "{DE948E96-C107-49B0-B5A7-1CC05D51EF16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -43,6 +45,14 @@ Global
 		{A5DEBD51-957B-4D4E-B059-E2C3EC3A8A60}.Release|x64.Build.0 = Release|x64
 		{A5DEBD51-957B-4D4E-B059-E2C3EC3A8A60}.Release|x86.ActiveCfg = Release|Win32
 		{A5DEBD51-957B-4D4E-B059-E2C3EC3A8A60}.Release|x86.Build.0 = Release|Win32
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Debug|x64.ActiveCfg = Debug|x64
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Debug|x64.Build.0 = Debug|x64
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Debug|x86.ActiveCfg = Debug|Win32
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Debug|x86.Build.0 = Debug|Win32
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Release|x64.ActiveCfg = Release|x64
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Release|x64.Build.0 = Release|x64
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Release|x86.ActiveCfg = Release|Win32
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D6790DE6-BFDF-4C7D-AB47-17C061295E67} = {A14E79AE-1BFB-4F9C-9E8D-DA44417AE0A9}
 		{A5DEBD51-957B-4D4E-B059-E2C3EC3A8A60} = {8469C199-AAB6-42ED-80CF-4ED0E458915B}
+		{DE948E96-C107-49B0-B5A7-1CC05D51EF16} = {8469C199-AAB6-42ED-80CF-4ED0E458915B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2295DDE7-AEF1-46F0-986A-0C9E1AAE96D1}
