@@ -8,6 +8,9 @@
 using namespace std;
 
 // UTF-8 main with Windows API; We can use the old-school way..
+// To show grapheme characters (Compounded character with zero-width joiner character) such as 🐻 in Windows Terminal,
+// You should update it to 1.22 or later.
+// Source: https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-22-release/
 int main(int argc, char** argv)
 {
     HANDLE hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
