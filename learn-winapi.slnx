@@ -1,0 +1,24 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/directx/" />
+  <Folder Name="/gui/" />
+  <Folder Name="/networks/">
+    <Project Path="networks/ByteOrder/ByteOrder.vcxproj" Id="4d8ac5bc-ad31-40d0-9fea-670f3f9f790b" />
+    <Project Path="networks/WinSocket/WinSocket.vcxproj" Id="d6790de6-bfdf-4c7d-ab47-17c061295e67" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="common.manifest" />
+  </Folder>
+  <Folder Name="/Solution Items/commoncode/">
+    <File Path="commoncode/consoleio.cpp" />
+    <File Path="commoncode/consoleio.h" />
+  </Folder>
+  <Folder Name="/winapi/">
+    <Project Path="winapi/UTFIoTest/UTFIoTest.vcxproj" Id="de948e96-c107-49b0-b5a7-1cc05d51ef16" />
+    <Project Path="winapi/UTFTest/UTFTest.vcxproj" Id="a5debd51-957b-4d4e-b059-e2c3ec3a8a60" />
+  </Folder>
+</Solution>
